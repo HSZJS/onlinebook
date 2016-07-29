@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+
+	
+
+	<package name="user" namespace="/user" extends="default">
+		<!-- 
+		<interceptors>
+			<interceptor name="validateLogin"
+				class="com.zg.web.interceptor.ValidateUserLoginInterceptor"></interceptor>
+			<interceptor-stack name="loginStack">
+				<interceptor-ref name="validateLogin"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+
+		</interceptors>
+		<default-interceptor-ref name="loginStack"></default-interceptor-ref>
+		 -->
+        <!-- 执行路径的请求 -->
+		<action name="login" class="com.zg.web.action.UserAction"
+			method="login">
+			<result type="redirectAction">
+	      		<param name="namespace">/sort</param>
+	      		<param name="actionName">sort</param>
+	    	</result>
+		</action>
+	</package>
+
+</struts>

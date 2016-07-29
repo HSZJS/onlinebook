@@ -1,0 +1,72 @@
+
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 22px;
+	color: #94c3c9;
+	text-align: center;
+	
+}
+
+input, button {
+	font-size: 22px;
+}
+
+textarea {
+	width: 70%;
+	height: 100px;
+}
+
+button {
+	margin: auto 30px;
+}
+
+#main {
+	margin: 100px auto;
+	border: 1px solid #F2E9C8;
+	width: 520px;
+}
+
+table {
+	font-size: 22px;
+	color: #663300;
+	border-color :#F2E9C8;
+}
+
+#regtable {
+	margin: 10px;
+	width: 100%;
+
+}
+
+.left-part {
+	text-align: right;
+	width: 30%;
+}
+
+.right-part {
+	width: 65%;
+}
+
+.pass-check {
+	float: left;
+	border: 1px solid gray;
+	margin: 1px 5px;
+	width: 60px;
+	text-align: center;
+}
+
+.center-part {
+	text-align: center;
+}
+
+.show-error {
+	color: red;
+	display: none;
+	cursor: hand;
+}
+
+.show-ok {
+	color: green;
+	display: none;
+}

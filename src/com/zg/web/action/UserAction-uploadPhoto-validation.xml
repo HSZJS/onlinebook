@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+        "-//OpenSymphony Group//XWork Validator Config 1.0//EN"
+        "http://www.opensymphony.com/xwork/xwork-validator-1.0.dtd">
+<validators>
+
+
+	<field name="photoFileName">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>必须上传文件</message>
+		</field-validator>
+		<field-validator type="regex">
+			<param name="expression">^.+\.(png|gif|jpg|bmp)$</param>
+			<message>图片格式不正确</message>
+		</field-validator>
+	</field>
+</validators>

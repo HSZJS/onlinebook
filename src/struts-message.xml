@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="message" extends="default" namespace="/message">
+		<action name="messageAction" class="com.zzti.keti.action.MessageAction">
+        	<result name="success">success.jsp</result>	
+        	<result name="input">login.jsp</result>			
+        </action>
+		<action name="*Message" class="com.zg.web.action.MessageAction" method="{1}">
+			<interceptor-ref name="loginStack"></interceptor-ref>
+			<result name="to">/book/messageView.jsp</result>
+			<result name="look">/book/lookMessage.jsp</result>
+			<result name="save" type="redirect">/book/one?id=${bookid}</result>
+			<result name="saveChapter">/book/showUploadBooks.jsp</result>
+		</action>
+	</package>
+
+</struts>

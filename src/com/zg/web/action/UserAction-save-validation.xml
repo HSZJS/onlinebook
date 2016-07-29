@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+        "-//OpenSymphony Group//XWork Validator Config 1.0//EN"
+        "http://www.opensymphony.com/xwork/xwork-validator-1.0.dtd">
+<validators>
+
+	<field name="uname">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>用户名必填</message>
+		</field-validator>
+	</field>
+
+	<field name="pwd">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>密码必填</message>
+		</field-validator>
+
+		<field-validator type="stringlength">
+			<param name="trim">true</param>
+			<param name="minLength">6</param>
+			<param name="maxLength">20</param>
+			<message>密码的长度要为6-20个字符</message>
+		</field-validator>
+	</field>
+	<field name="pwd2">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>确认密码必填</message>
+		</field-validator>
+		<field-validator type="fieldexpression">
+			<param name="expression">(pwd eq pwd2)</param>
+			<message>密码和确认密码不相等</message>
+		</field-validator>
+	</field>
+
+	<field name="email">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>电子邮箱必填</message>
+		</field-validator>
+		<field-validator type="email">
+			<message>电子邮箱格式不正确</message>
+		</field-validator>
+
+	</field>
+
+
+</validators>

@@ -1,0 +1,6 @@
+人员基本信息表	User(id,username,password,name,score...,roleid)  score 分数
+角色表			Role(id,name);
+书籍表			Book(id,name,author,userid,clicknum,recommend,createtime,path,valid,categoryid....); recommend 推荐数	
+类别表			Category(id,name);
+订阅表			Subscription(id,userid,bookeid,createtime)
+人员最近阅读表	UserBook(id,userid,bookid,createtime)

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="first" extends="default" namespace="/book">
+		<action name="one" class="com.zg.web.action.BookAction" method="findBookById">
+			<!-- 声明式异常处理，当LoginAction的login方法抛出了LoginFailException，
+			strtus的exception拦截器就会将异常封装到ExceptionHodler,并推入值栈，
+			然后跳转到error对应的错误页面，在页面中用${exception.message}就能显示错误信息 -->
+			<result name="success">/book/book.jsp</result>
+			<exception-mapping result="error"
+				exception="com.zg.exception.LoginFailException">
+			</exception-mapping>
+		</action>
+		<action name="readBook" class="com.zg.web.action.BookAction" method="readBook">
+			<!-- 声明式异常处理，当LoginAction的login方法抛出了LoginFailException，
+			strtus的exception拦截器就会将异常封装到ExceptionHodler,并推入值栈，
+			然后跳转到error对应的错误页面，在页面中用${exception.message}就能显示错误信息 -->
+			<result name="success">/book/book.jsp</result>
+			<exception-mapping result="error"
+				exception="com.zg.exception.LoginFailException">
+			</exception-mapping>
+		</action>
+		<action name="search" class="com.zg.web.action.BookAction" method="search">
+			<!-- 声明式异常处理，当LoginAction的login方法抛出了LoginFailException，
+			strtus的exception拦截器就会将异常封装到ExceptionHodler,并推入值栈，
+			然后跳转到error对应的错误页面，在页面中用${exception.message}就能显示错误信息 -->
+			<interceptor-ref name="myStack"></interceptor-ref>
+			<result name="success">/book/search.jsp</result>
+			<exception-mapping result="error"
+				exception="com.zg.exception.LoginFailException">
+			</exception-mapping>
+		</action>
+		<action name="borrow" class="com.zg.web.action.BookAction" method="borrow">
+			<interceptor-ref name="loginStack"></interceptor-ref>
+			<result name="success">/book/search.jsp</result>
+		</action>
+		<action name="list" class="com.zg.web.action.SortAction" method="findSortsDefault">
+			
+			<result name="success">/book/list.jsp</result>
+		</action>
+		<action name="borrowBook" class="com.zg.web.action.BookAction" method="borrowBook">
+			<interceptor-ref name="loginStack"></interceptor-ref>
+			<result name="success">/book/userBorrwoBooks.jsp</result>
+		</action>
+		
+		<action name="uploadBook" class="com.zg.web.action.BookAction" method="uploadBook">
+			<interceptor-ref name="loginStack"></interceptor-ref>
+			<result type="redirectAction">
+	      		<param name="namespace">/book</param>
+	      		<param name="actionName">findUploadBook</param>
+	    	</result>
+		</action>
+		<action name="checkUploadBook" class="com.zg.web.action.BookAction" method="checkUploadBook">
+			<interceptor-ref name="loginStack"></interceptor-ref>
+			<result name="success">/book/checkUploadBook.jsp</result>
+		</action>
+		<action name="checkBook" class="com.zg.web.action.BookAction" method="checkBook">
+			<interceptor-ref name="loginStack"></interceptor-ref>
+		</action>
+		<action name="checkBookBack" class="com.zg.web.action.BookAction" method="checkBookBack">
+			<interceptor-ref name="loginStack"></interceptor-ref>
+		</action>
+		<action name="findUploadBook" class="com.zg.web.action.BookAction" method="findUploadBook">
+			<interceptor-ref name="loginStack"></interceptor-ref>
+			<result name="success">/book/showUploadBooks.jsp</result>
+		</action>
+		<!-- 跳转到修改图书的页面-->
+		<action name="toUpdateBook" class="com.zg.web.action.BookAction" method="toUpdateBook">
+			<interceptor-ref name="loginStack"></interceptor-ref>
+			<result name="success">/book/updateBook.jsp</result>
+		</action>
+		<action name="readChapterBook" class="com.zg.web.action.BookAction" method="readChapter">
+			<result name="readChapterBook">/book/chapterList.jsp</result>
+		</action>
+		<!-- 修改图书-->
+		<action name="updateBook" class="com.zg.web.action.BookAction" method="updateBook">
+			<interceptor-ref name="loginStack"></interceptor-ref>
+			<result type="redirectAction">
+	      		<param name="namespace">/book</param>
+	      		<param name="actionName">findUploadBook?userid=${userid}</param>
+	    	</result>
+		</action>
+		<!-- 借阅书到期，修改为不可读 -->
+		<action name="changeBorrowBook" class="com.zg.web.action.BookAction" method="changeBorrowBook">
+			<interceptor-ref name="loginStack"></interceptor-ref>
+		</action>
+		<action name="read" class="com.zg.web.action.BookAction" method="read">
+			<result name="success">/book/read.jsp</result>
+		</action>
+		<action name="readChapterById" class="com.zg.web.action.BookAction" method="readChapterById">
+			<result name="readChapterById">/book/readChapter.jsp</result>
+			<result name="readError">/error/error.jsp</result>
+		</action>
+		
+		<action name="free" class="com.zg.web.action.BookAction" method="free">
+			<result name="success">/book/freeBooks.jsp</result>
+		</action>
+		<action name="*Book" class="com.zg.web.action.BookAction" method="{1}">
+			<interceptor-ref name="loginStack"></interceptor-ref>
+			<result name="manageChapter">/book/chapter.jsp</result>
+			<result name="saveChapter">/book/showUploadBooks.jsp</result>
+		</action>
+	</package>
+
+</struts>

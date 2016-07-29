@@ -1,0 +1,423 @@
+@charset "utf-8";
+/*  ------ common ------- */
+* {
+	margin: 0 0 0 0;
+	padding:0 0 0 0;
+}
+BODY{
+	margin:0 0 0 0;
+	padding:0 0 0 0;
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#3C3C3C;
+	text-align:center;
+	letter-spacing:1px;
+	background:url(top.gif);
+}
+textarea { 
+	width:280px;
+	border:1px solid green;
+	background-color: green;
+	font-size: 12px; 
+}
+img{
+	vertical-align: middle;
+	border: 0px none;
+}
+td{
+	word-break: break-all;
+}
+a{
+	text-decoration: none;
+	color: #666666;
+}
+a:hover {
+	text-decoration:underline;
+	color: #027EBB;
+}
+span{
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#000;
+	text-align:center;
+	letter-spacing:1px;
+	}
+ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+li{
+	list-style:none;
+}
+.button{
+	border:none;
+	background:url(button1.jpg) no-repeat;
+	height:21px;
+	width:67px;
+	font-weight:bold;
+	color:#ffffff;
+	font-size:12px;
+	*vertical-align:middle;
+	vertical-align:top;
+}
+.input_textshort{
+	border:1px solid #cfcfcf;
+	height:18px;
+	width:200px;
+	background:url(inputbg.jpg) repeat-x;
+}
+.input_textlong{
+	border:1px solid #cfcfcf;
+	height:18px;
+	background:url(inputbg.jpg) repeat-x;
+	width:350px;
+}
+textarea{
+	width:280px;
+	border: 1px solid #A5ACB2;
+	background-color: #ffffff;
+	font-size: 12px; 
+}
+.impor{
+	color:#FF0000;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	text-align:right;
+}
+
+/*  ------ header ------- */
+#top_out{
+	WIDTH: 950px;
+	text-align:center;
+	margin: 0 auto;
+	padding:0 auto;
+	overflow:hidden;
+	
+}
+#top{
+	text-align:left;
+	margin: 0 auto;
+	padding:0 auto;
+	width:950px;
+	
+	height:auto;
+	overflow:hidden;
+}
+#mdzone{
+	height:110px;
+}
+.logo{
+	float:left;
+	width:300px;
+	margin:10px 0 0 0;
+}
+.kh{
+	float:right;
+	width:580px;
+	margin:17px 0 0 0;
+	padding:0 0 0 50;
+}
+.search{
+	background:url(shbg.jpg) repeat-y;
+	width:266px;
+	margin:10px 0 0 0;
+	padding:10px;
+}
+.searchtext{
+	background:#CCFFCC;
+	border:green solid 3;
+	width:300px;
+	height:40px;
+	vertical-align:top;
+	line-height:2.5;
+}
+#topzone{
+	
+}
+.login{
+	color:#b8b8b8;
+	margin-top:20px;
+	text-align:right;
+}
+.login_text{
+	border-bottom:1px solid #353535;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	background:none;
+	height:18px;
+	width:125px;
+	padding:0 0 0 5px;
+}
+.login_button{
+	border:1px solid #995808;
+	padding:3px 5px 1px 5px;
+	background:#c5791b;
+	font-size:12px;
+	color:#ffffff;
+}
+.login a{
+	color:#e89a38;
+}
+.loginname{
+	color:#12C6FF;
+	font-weight:bold;
+}
+#navout{
+	WIDTH: 950px;
+	text-align:center;
+	margin: 0 auto;
+	padding:0 auto;
+	overflow:hidden;
+	height:38px;
+	letter-spacing:1px;	
+	background:url(noticebg.png) no-repeat;
+	background-position:center
+}
+#nav{
+	text-align:left;
+	margin: 0 auto;
+	padding:0 auto;
+	width:950px;
+	height:38px;
+	overflow:hidden;
+}
+#nav li{
+	float:left;
+	width:100px;
+	height:38px;
+}
+#nav li a{  
+	text-align: center; 
+	color: #1F2123;
+	height:38px;
+	display:block;
+	padding:12px 0 0 0;
+	font-weight:bold;
+	color:#ffffff;
+}
+#nav li a:hover, #nav li a.current{ 
+	color: black;
+	font-weight:bold;
+	text-decoration:none;
+	background:url(menubg.gif) no-repeat;
+}
+#menu_out{
+	WIDTH:100%;
+	text-align:center;
+	margin: 0 auto;
+	padding:0 auto;
+	overflow:hidden;
+	height:30px;
+	background:url(menubg.gif);	
+}
+#menu{
+	text-align:left;
+	margin: 0 auto;
+	padding:0 auto;
+	width:950px;
+	overflow:hidden;
+	background:#746560;
+	border-bottom:1px solid #2f261d;
+	border-left:1px solid #2f261d;
+	border-right:1px solid #2f261d;
+}
+#menu ul{
+	margin:5px 0 5px 0;
+}
+#menu li{
+	display:inline;
+}
+#menu li a{  
+	text-align: center; 
+	color: #ffffff;
+	padding:0 10px 0 10px;
+}
+#menu li a:hover, #nav li a.current{ 
+	color: #E4F83D;
+	text-decoration:none;
+}
+
+#main_out{
+	WIDTH: 100%;
+	text-align:center;
+	margin: 0 auto;
+	padding:0 auto;
+	overflow:hidden;
+}
+#main{
+	text-align:left;
+	margin: 0 auto;
+	padding:0 auto;
+	width:950px;
+	overflow:hidden;
+}
+#left2{
+	
+	margin:0 0px 0 0;
+	padding:0 0px 0 2px;
+	float:left;
+	width:685px;
+	overflow:hidden;	
+}
+#right2{
+	float:right;
+	width:260px;
+	background:#f1f1f1;
+	padding-bottom:15px;
+	overflow:hidden;
+	padding:0px 0px 0px 3px;
+}
+span{
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#000;
+	text-align:center;
+	letter-spacing:1px;
+	}
+ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+li{
+	list-style:none;
+}
+.button{
+	border:none;
+	background:url(button1.jpg) no-repeat;
+	height:21px;
+	width:67px;
+	font-weight:bold;
+	color:#ffffff;
+	font-size:12px;
+	*vertical-align:middle;
+	vertical-align:top;
+}
+.input_textshort{
+	border:1px solid #cfcfcf;
+	height:18px;
+	width:200px;
+	background:url(inputbg.jpg) repeat-x;
+}
+.input_textlong{
+	border:1px solid #cfcfcf;
+	height:18px;
+	background:url(inputbg.jpg) repeat-x;
+	width:350px;
+}
+textarea{
+	width:280px;
+	border: 1px solid #A5ACB2;
+	background-color: #ffffff;
+	font-size: 12px; 
+}
+.impor{
+	color:#FF0000;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	text-align:right;
+}
+span{
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#000;
+	text-align:center;
+	letter-spacing:1px;
+	}
+.div0{
+	width:690;
+	height:150;
+	padding:8 0 0 0;
+	background-image:url(shuku_banner_bg.png);
+	}
+.div1{
+	width:685;
+	
+	}
+.div2{
+	text-align:center;
+	padding:5 0 0 0;
+	width:30px;
+	height:150;
+	float:left;
+	}
+.div3{
+	width:120;
+	height:150;
+	float:left;
+	padding:2 0 0 0;
+	}
+.div4{
+	width:500;
+	height:150;
+	float:left;
+	}
+.div41{
+	 width:167;
+	 height:30;
+	 float:left;
+	}
+.div42{
+	 width:167;
+	 height:30;
+	 float:left
+	}
+.div45{
+	 width:150;
+	 height:30;
+	 float:left
+	}
+.div43{
+	 width:167;
+	 height:30;
+	 float:left
+	}
+.div46{
+	width:500;
+	height:90;
+	float:left;
+	
+	}
+.div44{
+	 width:300;
+	 height:30;
+	 float:left
+	}
+
+.div5{
+	width:30;
+	height:150;
+	float:right;
+	}
+.div6{
+	width:500;
+	height:30;
+	float:left;
+	margin:5 0 0 0;
+	}
+	
+/*  ------ footer------- */
+#foot_out{
+	WIDTH: 950;
+	text-align:center;
+	margin: 0 auto;
+	padding:0 auto;
+	overflow:hidden;
+}
+#foot{
+	text-align:left;
+	margin: 0 auto;
+	padding:0 auto;
+	width:950px;
+	overflow:hidden;
+}
+#foot p{
+	text-align:center;
+	color:#ffffff;
+	padding:5px 0 0 0;
+}
+.foot_in{
+	margin:15px 20px 20px 0;
+}

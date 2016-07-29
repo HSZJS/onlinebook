@@ -1,0 +1,38 @@
+BODY {
+FONT-SIZE: 12px; BACKGROUND: url(http://www.faku521.net/tb/bg.gif) repeat-x; MARGIN: 0px; COLOR: #333; TEXT-ALIGN: center
+}
+A {
+COLOR: #333; FONT-FAMILY: Arial; TEXT-DECORATION: none
+}
+A:hover {
+COLOR: #f00; TEXT-DECORATION: none
+}
+IMG {
+BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+.all {
+MARGIN: 0px auto; OVERFLOW: hidden; WIDTH: 970px; HEIGHT: 39px; TEXT-ALIGN: left
+}
+.logo {
+FLOAT: left; MARGIN: 12px 0px 0px 10px; OVERFLOW: hidden; LINE-HEIGHT: 18px}
+.menu {
+FLOAT: left; MARGIN: 12px 0px 0px 10px; OVERFLOW: hidden; LINE-HEIGHT: 18px
+}
+.game {
+FLOAT: right; MARGIN: 12px 0px 0px 10px; OVERFLOW: hidden; LINE-HEIGHT: 18px
+}
+.other {
+BACKGROUND: url(http://www.faku521.net/tb/gudong.gif) no-repeat; FLOAT: right; MARGIN: 10px 0px 0px; OVERFLOW: hidden; WIDTH: 225px; HEIGHT: 18px
+}
+#gundongnews0 {
+PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+#gundongnews0 LI {
+PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+#gundongnews0 {
+PADDING-RIGHT: 0px; PADDING-LEFT: 45px; PADDING-BOTTOM: 0px; OVERFLOW: hidden; PADDING-TOP: 0px; HEIGHT: 18px
+}
+#gundongnews0 LI {
+PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; OVERFLOW: hidden; LINE-HEIGHT: 15px; PADDING-TOP: 3px
+}

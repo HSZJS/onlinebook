@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.zg.po.Borrowbook" table="borrowbook">
+		<composite-id>
+			<key-property name="userid" column="userid" type="integer"></key-property>
+			<key-property name="bookid" column="bookid" type="integer"></key-property>
+		</composite-id>
+		<property name="isread"></property>
+		<property name="deadline"></property>
+		<property name="isdel">
+			<column name="isdel" default="0"></column>
+		</property>
+	</class>
+</hibernate-mapping>

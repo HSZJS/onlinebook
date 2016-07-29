@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.devMode" value="true"></constant>
+	<constant name="struts.locale" value="zh_CN"></constant>
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	<constant name="struts.enable.DynamicMethodInvocation"
+		value="false" />
+	<constant name="struts.action.extension" value="action,,"></constant>
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<constant name="struts.action.excludePattern" value=" /dwr.*,/webEditor.*"></constant>
+	
+	<package name="default" extends="struts-default" abstract="true">
+
+		<result-types>
+			<result-type name="prompt"
+				class="com.zg.web.result.PromptResult">
+			</result-type>
+		</result-types>
+
+		<interceptors>
+			<!--定义扩展的Exception拦截器 -->
+			<interceptor name="myException"
+				class="com.zg.web.interceptor.ExceptionMappingInterceptor">
+			</interceptor>
+			
+			
+			<interceptor name="validateUserLogin"
+				class="com.zg.web.interceptor.ValidateUserLoginInterceptor">
+			</interceptor>
+			
+
+			<!-- 定义拦截器栈myStack，覆盖defaultStack的exception拦截器 -->
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="myException" />
+				<interceptor-ref name="alias" />
+				<interceptor-ref name="servletConfig" />
+				<interceptor-ref name="i18n" />
+				<interceptor-ref name="prepare" />
+				<interceptor-ref name="chain" />
+				<interceptor-ref name="debugging" />
+				<interceptor-ref name="scopedModelDriven" />
+				<interceptor-ref name="modelDriven" />
+				<interceptor-ref name="fileUpload" />
+				<interceptor-ref name="checkbox" />
+				<interceptor-ref name="multiselect" />
+				<interceptor-ref name="staticParams" />
+				<interceptor-ref name="actionMappingParams" />
+				<interceptor-ref name="params">
+					<param name="excludeParams">
+						dojo\..*,^struts\..*
+					</param>
+				</interceptor-ref>
+				<interceptor-ref name="conversionError" />
+				<interceptor-ref name="validation">
+					<param name="excludeMethods">
+						input,back,cancel,browse
+					</param>
+				</interceptor-ref>
+				<interceptor-ref name="workflow">
+					<param name="excludeMethods">
+						input,back,cancel,browse
+					</param>
+				</interceptor-ref>
+			</interceptor-stack>
+
+			<interceptor-stack name="loginStack">
+				<interceptor-ref name="validateUserLogin"></interceptor-ref>
+				<interceptor-ref name="myStack"></interceptor-ref>
+			</interceptor-stack>
+
+
+
+		</interceptors>
+
+		<!-- 设置新拦截器栈myStack为包中默认拦截器栈 -->
+		<default-interceptor-ref name="myStack"></default-interceptor-ref>
+
+		<!--定义异常的返回页面  -->
+		<global-results>
+			<result name="error">/error.jsp</result>
+			<result name="input">/error.jsp</result>
+			<result name="login" type="prompt">
+				<param name="location">/index.jsp</param>
+				<param name="message">您还没有登录，无权限访问</param>
+			</result>
+		</global-results>
+
+		<!-- 定义全局异常-->
+		<global-exception-mappings>
+			<exception-mapping result="error"
+				exception="com.zg.exception.DaoException">
+				<param name="exceptionMessage">服务器忙，请稍后再试</param>
+			</exception-mapping>
+			<exception-mapping result="error"
+				exception="com.zg.exception.UpdateException">
+				<param name="exceptionMessage">操作失败</param>
+			</exception-mapping>
+		</global-exception-mappings>
+	</package>
+
+	<include file="struts-message.xml"></include>
+	<include file="struts-sort.xml"></include>
+	<include file="struts-book.xml"></include>
+	<include file="struts-user.xml"></include>
+	<include file="struts-record.xml"></include>
+	<include file="struts-ajax.xml"></include>
+</struts>

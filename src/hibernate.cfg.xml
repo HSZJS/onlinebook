@@ -1,0 +1,28 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<!-- 连接信息 缓存 参数设定  orm映射文件路径-->
+
+<session-factory>
+	<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+	<property name="hibernate.connection.url">jdbc:mysql://127.0.0.1/bdb</property>
+	<property name="hibernate.connection.username">root</property>
+	<property name="hibernate.connection.password">1</property>
+	<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+	<property name="hibernate.show_sql">true</property>
+	<property name="format_sql">true</property>
+
+	<mapping resource="com/zg/po/book.hbm.xml" />
+	<mapping resource="com/zg/po/chapter.hbm.xml" />
+	<mapping resource="com/zg/po/borrowbook.hbm.xml" />
+	<mapping resource="com/zg/po/record.hbm.xml" />
+	<mapping resource="com/zg/po/sort.hbm.xml" />
+	<mapping resource="com/zg/po/user.hbm.xml" />
+	<mapping resource="com/zg/po/message.hbm.xml" />
+	<mapping resource="com/zg/po/costrecord.hbm.xml" />
+</session-factory>
+
+</hibernate-configuration>

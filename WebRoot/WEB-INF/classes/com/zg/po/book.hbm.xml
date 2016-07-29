@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.zg.po.Book" table="book">
+		<id name="id">
+			<generator class="native">
+			</generator>
+		</id>
+		<property name="name">
+			<column name="name" not-null="true"></column>
+		</property>
+		<property name="author">
+			<column name="author" not-null="true"></column>
+		</property>
+		<property name="downloads">
+			<column name="downloads" default="0"></column>
+		</property>
+		<property name="isread">
+			<column name="isread" default="0"></column>
+		</property>
+		<property name="loaction">
+			<column name="loaction" not-null="true"></column>
+		</property>
+		<property name="pic">
+			<column name="pic" default="'bookpics\\default.jpg'"></column>
+		</property>
+		<property name="price">
+			<column name="price"></column>
+		</property>
+		<property name="search">
+			<column name="search" default="0"></column>
+		</property>
+		<property name="traffic">
+			<column name="traffic" default="0"></column>
+		</property>
+		<property name="isdel">
+			<column name="isdel" default="0"></column>
+		</property>
+
+		<many-to-one name="sort" property-ref="code">
+			<column name="sortid"></column>
+		</many-to-one>
+
+
+		<property name="isCheck">
+			<column name="isCheck" default="0"></column>
+		</property>
+		<property name="size">
+			<column name="size"></column>
+		</property>
+		<property name="offerTime">
+			<column name="offerTime" default="null"></column>
+		</property>
+		<property name="press">
+			<column name="press"></column>
+		</property>
+		<many-to-one name="user">
+			<column name="uid"></column>
+		</many-to-one>
+		<set name="users" table="borrowbook" fetch="select" lazy="true">
+			<key column="bookid"></key>
+			<many-to-many column="userid" class="com.zg.po.User"></many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

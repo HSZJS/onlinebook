@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+
+	
+
+	<package name="user" namespace="/user" extends="default">
+		
+		
+		<action name="login" class="com.zg.web.action.UserAction"
+			method="login">
+			<exception-mapping result="error"	exception="com.zg.exception.LoginFailException">
+				<param name="exceptionMessage">账号或密码不正确，请重新登录</param>
+			</exception-mapping>
+			<result type="redirectAction">
+	      		<param name="namespace">/sort</param>
+	      		<param name="actionName">sort</param>
+	    	</result>
+	    	<result name="error">/index.jsp</result>
+		</action>
+		
+		
+		<action name="logout" class="com.zg.web.action.UserAction" method="logout">
+			<result type="redirectAction">
+	      		<param name="namespace">/sort</param>
+	      		<param name="actionName">sort</param>
+	    	</result>
+		</action>
+		<action name="update" class="com.zg.web.action.UserAction" method="update">
+			<interceptor-ref name="loginStack"></interceptor-ref>
+		</action>
+		<action name="recharge" class="com.zg.web.action.UserAction" method="recharge">
+			<interceptor-ref name="loginStack"></interceptor-ref>
+			<result name="success">/user/rechargeSuccess.jsp</result>
+		</action>
+		<action name="cost" class="com.zg.web.action.UserAction" method="cost">
+			<interceptor-ref name="loginStack"></interceptor-ref>
+			<result name="success">/user/cost.jsp</result>
+		</action>
+		
+		<action name="manageVip" class="com.zg.web.action.UserAction" method="manageVip">
+			<interceptor-ref name="loginStack"></interceptor-ref>
+			<result name="success">/user/manageVip.jsp</result>
+		</action>
+		<action name="delete" class="com.zg.web.action.UserAction" method="delete">
+			<interceptor-ref name="loginStack"></interceptor-ref>
+		</action>
+		<action name="toAnswerJsp" class="com.zg.web.action.UserAction" method="toAnswerJsp">
+		<result name="toAnswerJsp">/user/answer.jsp</result>
+		</action>
+		<action name="toUpdatePwd" class="com.zg.web.action.UserAction" method="toUpdatePwd">
+			<result name="toUpdatePwd">/user/updatePwd.jsp</result>
+		</action>
+		<action name="updatePwd" class="com.zg.web.action.UserAction" method="updatePwd">
+			<result name="updatePwd">/index.jsp</result>
+		</action>
+		<action name="record" class="com.zg.web.action.UserAction" method="record">
+			<interceptor-ref name="loginStack"></interceptor-ref>
+			<result name="success">/user/record.jsp</result>
+		</action>
+		<action name="checkEmail" class="com.zg.web.action.UserAction" method="checkEmail">
+		</action>
+		<action name="registe" class="com.zg.web.action.UserAction" method="registe">
+			<result type="redirectAction">
+	      		<param name="namespace">/sort</param>
+	      		<param name="actionName">sort</param>
+	    	</result>
+		</action>
+		
+	</package>
+
+</struts>

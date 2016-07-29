@@ -1,0 +1,292 @@
+﻿{include file="header.htm"}
+<!-- 正文部分 -->
+
+
+
+        
+<div id="main_out">
+	<div id="main">
+    	<div id="bigbox">
+        	<div id="right2">
+        	  <div class="index_notice">              
+            
+            
+                
+               <!-- 公告 -->
+                 <div class="index_a">
+                	<div class="index_atitle">
+                  <table width="263" border="0">
+                	    <tr>
+                	      <td width="221"><h2>网站公告</h2></td>
+                	      <td width="32"><img src="/images/more.gif" align="right" class="aa"></td>
+              	      </tr>
+              	    </table>  
+                    
+                    
+                   </div>
+                    <div class="index_lcont">
+{insert name="announce_list" template='list' page=0 announcenum=1 subjectlen=28 introducelen=30 datetype=1 showauthor=0 target=1}
+              </div>  </div><!-- end of index_picart -->
+
+
+  <div class="index_a">
+                	<div class="index_atitle">
+                    <table width="263" border="0">
+                	    <tr>
+                	      <td width="221"> <h2>名家讲课视频</h2></td>
+                	      <td width="32"><img src="/images/more.gif" align="right" class="aa"></td>
+              	      </tr>
+              	    </table>
+                	 </div>
+                  
+ {insert name='picture_list' template='list' channelid='' catid='' page=0 picturenum=1 titlelen=40 introducelen=60 datenum=0 ordertype=0 datetype=0 showhits=0 target=1 cols=1 imgwidth=240   imgheight=150}             </div><!-- end of index_picart -->
+
+
+              
+                      <div class="index_a">
+                	<div class="index_atitle">
+                	      <h2>实时价格</h2>
+                	</div>
+                     <div class="index_lcont">
+<Iframe src="http://old.tjpme.com/hq/hq.html" width="250px" height="180px" scrolling="no" frameborder="0"></iframe>
+              </div>  
+                     </div><!-- end of index_picart -->              
+              
+              
+                  
+               
+              <div class="index_a">
+                	<div class="index_atitle">
+                	  <h2>30天黄金价格走势</h2></div>
+                     <div class="index_lcont">
+<img src="http://www.kitco.cn/cn/past_charts/au0030_cn.gif" width="255px" height="160px">
+              </div>  </div><!-- end of index_picart -->   
+
+
+
+                   <div class="index_a">
+                	<div class="index_atitle">
+                	  <h2>国际黄金现货价格</h2></div>
+                     <div class="index_lcont">
+<div class="nTab">
+        <div class="TabTitle">
+            <ul id="myTab">
+                <li class="active" OnMouseOver  ="nTabs(this,0);">黄金</li>
+                <li class="normal" OnMouseOver  ="nTabs(this,1);">白银</li>
+                <li class="normal" OnMouseOver  ="nTabs(this,2);">美指</li>
+                <li class="normal" OnMouseOver  ="nTabs(this,3);">原油</li>
+            </ul>
+        </div>
+        <div class="TabContent">
+            <div id="myTab_Content0">
+              <img src="http://www.kitco.cn/cn/live_charts/t24_au_ch_usoz.gif" width="255px" height="160px">
+              </div>
+            <div id="myTab_Content1" class="none">
+                <img src="http://www.kitco.cn/cn/live_charts/t24_ag_cn.gif" width="255px" height="160px"></div>
+            <div id="myTab_Content2" class="none">
+              <img src="http://www.kitco.cn/cn/live_charts/t24_usd_182x116.gif" width="255px" height="160px"></div>
+            <div id="myTab_Content3" class="none">
+                <img src="http://www.kitco.cn/cn/live_charts/t24_crude_182x116.gif" width="255px" height="160px"></div>
+        </div>
+    </div>              </div>  
+                </div><!-- end of index_picart -->   
+                      
+              </div>
+              
+                
+                <div class="search"><script language="JavaScript" src="{$siteurl}data/js/search_{$lang_sign}.js"></script></div>
+                
+             
+          </div><!-- end of right -->
+            
+            <div id="left2"> 
+
+
+            <div style="margin:0 0 5px 0">
+            <Iframe src="lunbo/index.html" width="665px" height="300px" scrolling="no" frameborder="0"></iframe></div>
+            
+        
+                
+       
+            <table width="660" height="90" border="2px" bordercolor="#BE150D">
+              <tr>
+    <td width="150" align="center"   bordercolor="#630000" bgcolor="#EAE6DA">
+      <a href="/download/jiaoyi.rar"><img src="images/jiaoyi.png" height="38" width="140"  alt="#"></a>  <a href="/download/fenxi.rar"><img src="images/fenxi.png" height="38" width="140"/></a></td>
+    <td colspan="2" align="center"   bordercolor="#630000" bgcolor="#EAE6DA"> <Iframe src="http://gold.forex.com.cn/hj_jsq.html" width="480px" height="90px" scrolling="no" frameborder="0"></iframe></td>
+  </tr>
+ 
+</table>                  
+
+  
+               
+                
+<div class="index_picart">
+  <div class="index_picart_title">
+    <table width="655" border="0">
+                	    <tr>
+                	      <td width="613"> <h2>行业资讯</h2></td>
+                	      <td width="32"><img src="/images/more.gif" align="right" class="aa"></td>
+              	      </tr>
+       	    </table>  
+ </div></div>              
+  
+ 
+                
+              <div class="index_news">
+
+
+
+   	<div class="index_newlist">
+                    	<div class="index_newlist_title">
+                    	  <h2>公司新闻</h2></div>
+               {insert name="article_list" template='index' channelid='' catid=' ' page=0 articlenum=8 titlelen=40 introducelen=50 datenum=0 ordertype=0 datetype=0 showhits=0 target=1 cols=1}
+                    </div>          
+                    
+                   
+                    
+  <!-- 全站最热文章-->       
+                    <div class="index_newhot">   
+                    	<div class="index_newhot_title">
+                    	  <h2>市场研究</h2></div>
+                    	{insert name="article_list" template='index' channelid='' catid=' ' page=0 articlenum=8 titlelen=40 introducelen=50 datenum=0 ordertype=0 datetype=0 showhits=0 target=1 cols=1}
+                  </div>
+                  
+
+                <!-- 全站最新文章-->
+                	<div class="index_newlist">
+                    	<div class="index_newlist_title">
+                    	  <h2>财经新闻</h2></div>
+               {insert name="article_list" template='index' channelid='' catid=' ' page=0 articlenum=8 titlelen=40 introducelen=50 datenum=0 ordertype=0 datetype=0 showhits=0 target=1 cols=1}
+                    </div>
+                    
+  <!-- 全站最热文章-->       
+                    <div class="index_newhot">   
+                    	<div class="index_newhot_title">
+                    	  <h2>综合信息</h2></div>
+                    	{insert name="article_list" template='index' channelid='' catid=' ' page=0 articlenum=8 titlelen=40 introducelen=50 datenum=0 ordertype=0 datetype=0 showhits=0 target=1 cols=1}
+                  </div>
+                        
+                <div class="s">
+                	<div class="s1">
+                     <table width="309" border="0">
+                	    <tr>
+                	      <td width="254"><h2>资深分析师</h2></td>
+                	      <td width="45"><img src="/images/more.gif" align="right" class="aa"></td>
+              	      </tr>
+              	    </table>  
+                    </div>
+               
+          <div class="p"></div>
+                </div><!-- end of index_picart --> 
+                 <div class="t">
+                	<div class="t1">
+                    <table width="329" border="0">
+                	    <tr >
+                	      <td  width="287"><h2>专家互动</h2></td>
+                	      <td width="32"><img src="/images/more.gif" align="right" class="aa"></td>
+              	      </tr>
+              	    </table> 
+                  </div>
+                  
+          {insert name="guestbook_list" template='index' page=0 guestbooknum=8 titlelen=40 datenum=1 datetype=1 target=0 cols=1}
+                  </div>  
+                
+              
+
+<div class="index_picart">
+  <div class="index_picart_title">
+   <table width="655" border="0">
+                	    <tr>
+                	      <td width="613"> <h2>明星客服</h2></td>
+                	      <td width="32"><img src="/images/more.gif" align="right" class="aa"></td>
+              	      </tr>
+              	    </table>  
+ </div></div> 
+
+<table width="660" border="1" bordercolor="#A10000">
+  <tr bordercolor="#E8E2D4">
+    <td align="justify"><img src="images/kefu.jpg" width="120"></td>
+    <td align="justify"><img src="images/kefu.jpg" width="120"></td>
+    <td align="justify"><img src="images/kefu.jpg" width="120"></td>
+    <td align="justify"><img src="images/kefu.jpg" width="120"></td>
+    <td align="justify"><img src="images/kefu.jpg" width="120"></td>
+  </tr>
+  <tr bordercolor="#E8E2D4">
+    <td align="justify">
+      <font size="2px">姓名：XXX<br/>      工号：10086<br/>
+    评级：</font><img src="images/xx.png"><img src="images/xx.png"><img src="images/xx.png"><img src="images/xx.png"></td>
+    <td align="justify">  <font size="2px">姓名：XXX<br/>      工号：10086<br/>
+    评级：</font><img src="images/xx.png"><img src="images/xx.png"><img src="images/xx.png"><img src="images/xx.png"><img src="images/xx.png"></td>
+    <td align="justify">  <font size="2px">姓名：XXX<br/>      工号：10086<br/>
+    评级：</font><img src="images/xx.png"><img src="images/xx.png"><img src="images/xx.png"><img src="images/xx.png"><img src="images/xx.png"></td>
+    <td align="justify">  <font size="2px">姓名：XXX<br/>      工号：10086<br/>
+    评级：</font><img src="images/xx.png"><img src="images/xx.png"><img src="images/xx.png"></td>
+    <td align="justify">  <font size="2px">姓名：XXX<br/>      工号：10086<br/>
+    评级：</font><img src="images/xx.png"><img src="images/xx.png"><img src="images/xx.png"><img src="images/xx.png"><img src="images/xx.png"></td>
+  </tr>
+</table>
+
+           
+      </div></div>
+
+
+            </div><!-- end of left -->
+
+            
+		</div><!-- bigbox-->
+        
+        <div style="font:14px bold bolder" align="center">
+        <table width="950" border="0">
+  <tr >
+    <td><img src="{$skindir}/images/QQ截图20121011092719.png" width="950"></td>
+  </tr>
+</table>
+
+<table width="950" height="105" border="0" background="{$skindir}/images/jiaoyi.png">
+
+     
+  <tr >
+   <td width="88" rowspan="4" align="left">&nbsp;</td>
+    <td width="140" align="left" > *开户流程
+    </td>
+   
+   <td width="73" rowspan="4" align="left">&nbsp;</td>
+    <td width="155" align="left"><br>
+    </td>
+    <td width="82" rowspan="4" align="left">&nbsp;</td>
+    <td width="146" align="left"> *客户调查表
+   
+    </td>
+    <td width="74" rowspan="4" align="left">&nbsp;</td>
+    <td width="158" align="left"> *常见热点问题
+  
+    </td>
+  </tr>
+  <tr >
+    <td align="left" > *开户咨询 </td>
+    <td width="155" align="left">*白金交易规则</td>
+    <td width="146" align="left"> *风险提示书 </td>
+    <td width="158" align="left"> *联系我们 </td>
+  </tr>
+  <tr >
+    <td align="left" > *相关文件 </td>
+    <td width="155" align="left">*现货交易流程 </td>
+    <td width="146" align="left"> *客户协议书 </td>
+    <td width="158" align="left"> *投石问金宣传册 </td>
+  </tr>
+  <tr>
+    <td height="21" align="left" > *出入金流程 </td>
+    <td width="155" align="left">&nbsp;</td>
+    <td width="146" align="left"> *投资者确认函 </td>
+    <td width="158" align="left"> *投石问金操作手册 </td>
+  </tr>
+</table></div>
+    </div><!-- main-->
+    
+    
+    
+</div><!-- main_out -->
+
+
+
+{include file="footer.htm"}

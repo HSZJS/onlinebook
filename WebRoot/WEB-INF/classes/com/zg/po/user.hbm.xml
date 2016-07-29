@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.zg.po.User" table="user">
+		<id name="id">
+			<generator class="native">
+			</generator>
+		</id>
+		<property name="email">
+			<column name="email"></column>
+		</property>
+		<property name="password">
+			<column name="password"></column>
+		</property>
+		<property name="balance">
+			<column name="balance" default="0"></column>
+		</property>
+		<property name="nickname">
+			<column name="nickname"></column>
+		</property>
+		<property name="pic" >
+		  <column name="pic" default="'headpics\\default.jpg'"></column>
+		</property>
+		<property name="ispay">
+			<column name="ispay" default="0"></column>
+		</property>
+		<property name="isdel">
+			<column name="isdel" default="0"></column>
+		</property>
+		<property name="realName">
+			<column name="realName"></column>
+		</property>
+		<property name="sex">
+			<column name="sex"></column>
+		</property>
+		<property name="idCard">
+			<column name="idCard"></column>
+		</property>
+		<property name="phoneNumber">
+			<column name="phoneNumber"></column>
+		</property>
+		<property name="qq">
+			<column name="qq"></column>
+		</property>
+		<property name="question">
+			<column name="question"></column>
+		</property>
+		<property name="answer">
+			<column name="answer"></column>
+		</property>
+		<set name="uploadBooks" >
+			<key column="uid"></key>
+			<one-to-many class="com.zg.po.Book" />
+		</set>
+		<set name="books" table="borrowbook" fetch="select">
+			<key column="userid"></key>
+			<many-to-many column="bookid" class="com.zg.po.Book"></many-to-many>
+		</set>
+	
+		
+	</class>
+</hibernate-mapping>

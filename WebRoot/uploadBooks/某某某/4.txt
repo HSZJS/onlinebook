@@ -1,0 +1,30 @@
+
+		String id = this.getRequest().getParameter("id");
+		Chapter c = bookService.getChaptersById(id);
+		String location = c.getLocation();
+		String rootPath = this.getServletContext().getRealPath("/");
+		File file = new File(rootPath+"\\"+location);
+		OutputStream ous = null;
+		
+		String filename = c.getIndex()+".txt";
+		try{
+		   InputStream ins = new BufferedInputStream(new FileInputStream(rootPath+"\\"+location));
+		   byte [] buffer = new byte[ins.available()];
+		   ins.read(buffer);
+		   ins.close();
+		   
+		   HttpServletResponse response = (HttpServletResponse) ActionContext.getContext().get(ServletActionContext.HTTP_RESPONSE);
+		   response.reset();
+		   response.addHeader("Content-Disposition", "attachment;filename=" + new String(filename.getBytes()));
+		   response.addHeader("Content-Length", "" + file.length());
+		   ous = new BufferedOutputStream(response.getOutputStream());
+		   response.setContentType("application/octet-stream");
+		   ous.write(buffer);
+		   ous.flush();
+		   ous.close();
+		}catch(Exception e ){
+			e.printStackTrace();
+		}
+		   
+		return null;
+	

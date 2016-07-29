@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.zg.po.CostRecord" table="costrecord">
+		<id name="id">
+			<generator class="native">
+			</generator>
+		</id>
+		<property name="cost">
+			<column name="cost" ></column>
+		</property>
+		<property name="userid">
+			<column name="userid"></column>
+		</property>
+		<property name="bookid">
+			<column name="bookid"></column>
+		</property>
+		<property name="chapterid">
+			<column name="chapterid"></column>
+		</property>
+		<property name="bookName">
+			<column name="bookName"></column>
+		</property>
+		<property name="chapterName">
+			<column name="chapterName"></column>
+		</property>
+	</class>
+</hibernate-mapping>

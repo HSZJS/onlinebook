@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//WebRoot/book/footer.jsp=UTF-8
+encoding//WebRoot/testbanner/7.html=ISO-8859-1
+encoding//WebRoot/testbanner/lefttree.jsp=gbk
+encoding//src/com/zg/dao/sh/BaseDao.java=UTF-8
+encoding//src/com/zg/dao/sh/BookShDao.java=UTF-8
+encoding//src/com/zg/po/Borrowbook.java=UTF-8
+encoding//src/com/zg/service/sh/UserServiceImpl.java=UTF-8
+encoding//src/com/zg/vo/BookInfo.java=UTF-8
+encoding//src/com/zg/web/action/BookAction.java=UTF-8

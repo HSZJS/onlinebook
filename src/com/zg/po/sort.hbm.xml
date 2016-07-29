@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.zg.po.Sort" table="sort">
+
+		<id name="id">
+			<generator class="native">
+			</generator>
+		</id>
+		<property name="code">
+			<column name="code"></column>
+		</property>
+		<property name="name">
+			<column name="name"></column>
+		</property>
+		<property name="level">
+			<column name="level"></column>
+		</property>
+		<set name="books" >
+			<key column="sortid"></key>
+			<one-to-many class="com.zg.po.Book" />
+		</set>
+	</class>
+</hibernate-mapping>
